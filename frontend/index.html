@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Lead & Enquiry Analyzer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>AI Lead & Enquiry Analyzer</h1>
+    <p>Submit an enquiry and get instant AI-powered category, priority, and insights.</p>
+  </header>
+
+  <main>
+    <!-- Submit Form -->
+    <section class="card">
+      <h2>New Enquiry</h2>
+      <form id="enquiry-form">
+        <label for="enquiry_text">Enquiry Text *</label>
+        <textarea id="enquiry_text" name="enquiry_text" rows="4" required
+          placeholder="e.g. We need a chatbot for our ecommerce store, budget around 6 lakh, needed urgently"></textarea>
+
+        <div class="form-row">
+          <div>
+            <label for="industry">Industry</label>
+            <input type="text" id="industry" name="industry" placeholder="e.g. E-commerce" />
+          </div>
+          <div>
+            <label for="budget_inr">Budget (INR)</label>
+            <input type="number" id="budget_inr" name="budget_inr" min="0" placeholder="e.g. 600000" />
+          </div>
+          <div>
+            <label for="urgency_hint">Urgency</label>
+            <select id="urgency_hint" name="urgency_hint">
+              <option value="">-- Not specified --</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn">Analyze Enquiry</button>
+      </form>
+
+      <div id="result-box" class="result-box hidden"></div>
+      <div id="error-box" class="error-box hidden"></div>
+    </section>
+
+    <!-- Enquiry List -->
+    <section class="card">
+      <h2>Recent Enquiries</h2>
+      <div class="filters">
+        <select id="filter-category">
+          <option value="">All Categories</option>
+        </select>
+        <select id="filter-priority">
+          <option value="">All Priorities</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button id="refresh-btn">Refresh</button>
+      </div>
+
+      <table id="enquiry-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Text</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Industry</th>
+            <th>Budget</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody id="enquiry-table-body">
+          <tr><td colspan="7">Loading...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

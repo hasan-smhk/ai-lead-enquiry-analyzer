@@ -1,0 +1,107 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  color: #1f2937;
+}
+
+header {
+  background: #111827;
+  color: white;
+  padding: 24px 32px;
+}
+
+header h1 { margin: 0 0 4px 0; font-size: 24px; }
+header p { margin: 0; color: #cbd5e1; font-size: 14px; }
+
+main {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.card h2 { margin-top: 0; font-size: 18px; }
+
+label { display: block; margin: 10px 0 4px; font-size: 13px; font-weight: 600; color: #374151; }
+
+textarea, input, select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+button {
+  margin-top: 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover { background: #1d4ed8; }
+button:disabled { background: #93c5fd; cursor: not-allowed; }
+
+.result-box {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.error-box {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  font-size: 14px;
+}
+
+.hidden { display: none; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+.badge-High { background: #dc2626; }
+.badge-Medium { background: #d97706; }
+.badge-Low { background: #16a34a; }
+
+.filters { display: flex; gap: 10px; margin-bottom: 14px; }
+.filters select { width: auto; }
+.filters button { margin-top: 0; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e5e7eb; }
+th { background: #f9fafb; font-weight: 600; }
+td.text-cell { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

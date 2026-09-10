@@ -216,3 +216,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Environment
+.env
+venv/
+*.pyc
+__pycache__/
+
+# ML artifacts
+ml/models/*.joblib
+ml/data/processed/*
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/

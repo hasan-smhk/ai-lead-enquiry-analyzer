@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pydantic-settings
+python-dotenv
+pandas
+scikit-learn
+joblib
+spacy
+httpx
+pytest-cov
+pytest

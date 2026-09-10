@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  ai-lead-analyzer:
+    build: .
+    container_name: ai-lead-analyzer
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ml/models:/app/ml/models
+      - ./lead_analyzer.db:/app/lead_analyzer.db
+    environment:
+      - APP_ENV=production
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=sqlite:///./lead_analyzer.db
+      - MODEL_DIR=ml/models
+    restart: unless-stopped
